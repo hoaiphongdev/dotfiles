@@ -2,26 +2,25 @@
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
 #region Environment Variables
-# Set environment variables first as they might be needed by other configurations
 export TERM=xterm-256color
 export CLICOLOR=1
 
-# Java and Android SDK
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
-#endregion Environment Variables
+export PATH=/usr/local/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
+export ZSH="$HOME/.oh-my-zsh"
 
-#region Path Configuration
-# Homebrew needs to be early as other tools might depend on it
+#endregion Environment Variables
 eval $(/opt/homebrew/bin/brew shellenv)
 
+
 # Add other PATH additions after Homebrew
-export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
 #endregion Path Configuration
 
 #region ZSH Core Configuration
 # Oh My Zsh configuration
-export ZSH="$HOME/.oh-my-zsh"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Essential plugins
@@ -68,7 +67,6 @@ alias gitgraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cr
 # System aliases
 alias cls="clear"
 alias copydir='pwd | pbcopy'
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias clean-up='~/.config/scripts/clean.sh'
 
 # LSD (modern ls) aliases
