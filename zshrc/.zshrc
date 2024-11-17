@@ -5,14 +5,26 @@
 export TERM=xterm-256color
 export CLICOLOR=1
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=/usr/local/bin:$PATH
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
 export ZSH="$HOME/.oh-my-zsh"
 
 #endregion Environment Variables
+# MacOS-specific services
+if [ "$(uname -s)" = "Darwin" ]; then
+  # Add Brew to path, if it's installed
+  if [[ -d /opt/homebrew/bin ]]; then
+    export PATH=/opt/homebrew/bin:$PATH
+  fi
+
+
+  # Append the Android SDK locations to path
+  if [[ -d "${HOME}/Library/Android/" ]]; then
+    export PATH="${HOME}/Library/Android/sdk/emulator:${PATH}"
+    export ANDROID_HOME="${HOME}/Library/Android/sdk"
+    export ANDROID_SDK_ROOT="${HOME}/Library/Android/sdk"
+    export ANDROID_AVD_HOME="${ANDROID_SDK_ROOT}/tools/emulator"
+  fi
+fi
+
 eval $(/opt/homebrew/bin/brew shellenv)
 
 

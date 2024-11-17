@@ -1,10 +1,15 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  config = function()
-    require('lualine').setup({
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    event = "VeryLazy",
+    opts = {
       options = {
-        theme = 'dracula'
-      }
-    })
-  end
+        icons_enabled = true,
+        theme = 'auto',
+        component_separators = '|',
+        section_separators = { left = '', right = '' },
+      },
+    },
+  },
 }
