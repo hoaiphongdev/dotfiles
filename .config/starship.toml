@@ -117,15 +117,16 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = ""
+style = "fg:base bg:green"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:base bg:green"
+format = '[$all_status$ahead_behind ]($style)'
 
 [git_commit]
 tag_symbol = '  '
-
-[git_status]
-staged = "[+](green)"
-untracked = "[?](red)"
-modified = "[*](yellow)"
 
 [golang]
 symbol = ""
