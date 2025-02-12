@@ -1,35 +1,110 @@
 #!/bin/bash
 
-USER=`stat -f%Su /dev/console` 
+# Function to print messages with a formatted header
+function print_message() {
+    echo "========================================"
+    echo "$1"
+    echo "========================================"
+}
 
-#System Caches
-sudo mv /private/var/log/privoxy /private/var/privoxy > /dev/null 2>&1
-sudo /bin/rm -rf /private/var/log/* > /dev/null 2>&1
-sudo mv /private/var/privoxy /private/var/log/privoxy > /dev/null 2>&1
+# Function to safely remove files/directories with error checking
+function safe_remove() {
+    if [ -e "$1" ]; then
+        rm -rf "$1" > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+            echo "Warning: Failed to remove $1"
+        fi
+    fi
+}
 
-#System Caches
-sudo /bin/rm -rf /Users/$USER/Library/Logs/* > /dev/null 2>&1 & sudo /bin/rm -rf /Library/Logs/DiagnosticReports/*.* > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/tmp/com.apple.messages > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Caches/* > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/db/diagnostics/*/* > /dev/null 2>&1 & sudo /bin/rm -rf /Library/Logs/DiagnosticReports/ProxiedDevice-Bridge/*.ips > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/CrashReporter/* > /dev/null 2>&1 & sudo /bin/rm -rf /private/tmp/gzexe* > /dev/null 2>&1
+# Get the current user
+USER=$(whoami)
 
-#Safari Caches
-sudo /bin/rm -rf /Users/$USER/Library/Containers/com.apple.Safari/Data/Library/Caches/* > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.data > /dev/null 2>&1 & sudo /bin/rm -rf /private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.maps > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Containers/io.te0.WebView/Data/Library/Caches/WebKit > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/History.db* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/RecentlyClosedTabs.plist > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Safari/CloudHistoryRemoteConfiguration.plist > /dev/null 2>&1
-
-#Chrome Caches
-ChromePath="/Applications/Google Chrome.app"
-if [[ -d $ChromePath ]]; then
-sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/GPUCache/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Storage/ext/*/def/GPUCache/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/*-journal > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/databases/*-journal > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Visited\ Links > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Top\ Sites > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/History\ Provider\ Cache > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Current\ Tabs > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Network\ Action\ Predictor > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/*.ldb > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/*.log > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Extension\ State/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Session\ Storage/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Current\ Session > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/Storage/ext/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/Library/Application\ Support/Google/Chrome/*/*/Cache > /dev/null 2>&1
+# Ask for confirmation
+print_message "WARNING: This script will delete various caches and logs"
+echo "This may affect application behavior and cannot be undone."
+read -p "Are you sure you want to continue? (y/n): " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Operation cancelled."
+    exit 1
 fi
 
-#Clean Download History
-sudo sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent' > /dev/null 2>&1
+# System Logs Cleanup
+print_message "Cleaning system logs..."
+if [ -d "/private/var/log/privoxy" ]; then
+    sudo mv /private/var/log/privoxy /private/var/privoxy > /dev/null 2>&1
+fi
+sudo find /private/var/log -type f -exec rm {} \; > /dev/null 2>&1
+if [ -d "/private/var/privoxy" ]; then
+    sudo mv /private/var/privoxy /private/var/log/privoxy > /dev/null 2>&1
+fi
+echo "System logs cleanup completed."
+echo ""
 
-#Clean Terminal History
-sudo /bin/rm -rf /Users/$USER/.bash_sessions/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/.bash_history > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/.zsh_sessions/* > /dev/null 2>&1 & sudo /bin/rm -rf /Users/$USER/.zsh_history > /dev/null 2>&1
+# User and System Caches Cleanup
+print_message "Cleaning user and system caches..."
+safe_remove "/Users/$USER/Library/Logs/*"
+safe_remove "/Library/Logs/DiagnosticReports/*.*"
+safe_remove "/private/var/tmp/com.apple.messages"
+safe_remove "/Users/$USER/Library/Caches/*"
+safe_remove "/private/var/db/diagnostics/*/*"
+safe_remove "/Library/Logs/DiagnosticReports/ProxiedDevice-Bridge/*.ips"
+safe_remove "/Users/$USER/Library/Application Support/CrashReporter/*"
+safe_remove "/private/tmp/gzexe*"
+echo "User and system caches cleanup completed."
+echo ""
 
-#Applications Caches
-for x in $(ls ~/Library/Containers/) 
-do 
-    echo "Cleaning ~/Library/Containers/$x/Data/Library/Caches/"
-    rm -rf ~/Library/Containers/$x/Data/Library/Caches/*
-done
+# Safari Caches Cleanup
+print_message "Cleaning Safari caches..."
+safe_remove "/Users/$USER/Library/Containers/com.apple.Safari/Data/Library/Caches/*"
+safe_remove "/private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.data"
+safe_remove "/private/var/folders/ry/*/*/com.apple.Safari/com.apple.Safari/com.apple.metal/*/libraries.maps"
+safe_remove "/Users/$USER/Library/Containers/io.te0.WebView/Data/Library/Caches/WebKit"
+echo "Safari caches cleanup completed."
+echo ""
 
-echo done
+# Chrome Caches Cleanup (Login-Safe Version)
+print_message "Cleaning Chrome caches (preserving logins)..."
+ChromePath="/Applications/Google Chrome.app"
+if [[ -d $ChromePath ]]; then
+    # Only clean non-essential caches
+    safe_remove "/Users/$USER/Library/Application Support/Google/Chrome/*/GPUCache/*"
+    safe_remove "/Users/$USER/Library/Application Support/Google/Chrome/*/Storage/ext/*/def/GPUCache/*"
+    
+    # Avoid cleaning these files to preserve logins
+    # NOT deleting: Extension State, Session Storage, Current Session, Cookie files
+    
+    # Safe to clean
+    safe_remove "/Users/$USER/Library/Application Support/Google/Chrome/*/*-journal"
+    safe_remove "/Users/$USER/Library/Application Support/Google/Chrome/*/databases/*-journal"
+    safe_remove "/Users/$USER/Library/Application Support/Google/Chrome/*/*.log"
+    
+    echo "Chrome caches cleanup completed (login information preserved)."
+else
+    echo "Chrome not installed, skipping Chrome cleanup."
+fi
+echo ""
+
+# Download History Cleanup
+print_message "Cleaning download history..."
+sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent' > /dev/null 2>&1
+echo "Download history cleanup completed."
+echo ""
+
+# Terminal History Cleanup - Ask first
+print_message "Do you want to clean terminal history? (y/n): "
+read -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    safe_remove "/Users/$USER/.bash_sessions/*"
+    safe_remove "/Users/$USER/.bash_history"
+    safe_remove "/Users/$USER/.zsh_sessions/*"
+    safe_remove "/Users/$USER/.zsh_history"
+    echo "Terminal history cleanup completed."
+fi
+echo ""
+
+print_message "Cleanup process completed"
