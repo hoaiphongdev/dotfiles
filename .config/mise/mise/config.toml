@@ -1,0 +1,7 @@
+[settings]
+idiomatic_version_file_enable_tools = []
+
+[tools]
+node = "22.15.0"
+pnpm = "10.9.0"
+yarn = "latest"

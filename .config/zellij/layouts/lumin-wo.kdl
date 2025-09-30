@@ -1,0 +1,29 @@
+layout {
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+
+  tab name="LUMIN STATIC 🌮" cwd="~/Documents/workspaces/dsv/projects/lumin-static" {
+    pane split_direction="horizontal" {
+      pane focus=true name="BOSS ⭐️" size="70%"
+      pane name="MINION 🤖" size="30%"
+    }
+  }
+
+  tab name="LUMIN TEMPLATES 🍞" cwd="~/Documents/workspaces/dsv/projects/lumin-templates" {
+    pane split_direction="horizontal" {
+      pane focus=true name="BOSS ⭐️" size="70%"
+      pane name="MINION 🤖" size="30%"
+    }
+  }
+
+  tab name="LUMIN STATIC | MIGRATION 🍊" cwd="~/Documents/workspaces/dsv/projects/apply-nextjs-static-master" {
+      pane split_direction="horizontal" {
+      pane focus=true name="BOSS ⭐️" size="70%"
+      pane name="MINION 🤖" size="30%"
+    }
+  }
+}

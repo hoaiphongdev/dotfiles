@@ -1,0 +1,22 @@
+layout {
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+
+  tab name="LUMIN WEB BACKEND 2.0 🥕" cwd="~/Documents/workspaces/dsv/projects/lumin-web-backend-2.0" {
+    pane split_direction="horizontal" {
+      pane focus=true name="BOSS ⭐️" size="70%"
+      pane name="MINION 🤖" size="30%"
+    }
+  }
+
+  tab name="LUMIN AUTH ✍🏻" cwd="~/Documents/workspaces/dsv/projects/lumin-auth" {
+    pane split_direction="horizontal" {
+      pane focus=true name="BOSS ⭐️" size="70%"
+      pane name="MINION 🤖" size="30%"
+    }
+  }
+}

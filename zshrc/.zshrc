@@ -1,8 +1,10 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Environment Variables
 export TERM=xterm-256color
 export CLICOLOR=1
 export ZSH="$HOME/.oh-my-zsh"
-export PNPM_HOME="$HOME/Library/pnpm"
+# export PNPM_HOME="$HOME/Library/pnpm"
 
 # MacOS-specific configurations
 if [[ "$(uname -s)" = "Darwin" ]]; then
@@ -18,9 +20,6 @@ if [[ "$(uname -s)" = "Darwin" ]]; then
     export PATH="$ANDROID_HOME/emulator:$PATH"
   fi
 fi
-
-# Path Updates
-# export PATH="$ASDF_DATA_DIR/shims:$PNPM_HOME:/opt/homebrew/bin:$PATH"
 
 # ZSH Core Configuration
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
@@ -49,7 +48,8 @@ if [[ -d "$HOME/.ssh" ]]; then
 fi
 
 # Aliases
-alias gitlog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias killport='function _killport(){ lsof -ti :$1 | xargs kill -9; }; _killport'
+alias gitlog="git log --pretty=format:'%C(yellow)%h%C(reset) - %C(green)%an%C(reset), %C(blue)%ar%C(reset) : %s'"
 alias gitgraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias cls="clear"
 alias copydir='pwd | pbcopy'
@@ -58,7 +58,77 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias llt='ls --tree'
-alias zj='zellij'
+alias reset-cursor='tput cnorm'
+alias reload-zsh='exec zsh -l'
 
+# Zellij
+alias zj='zellij'
+alias zj-lumin-dev='zellij -l lumin-dev'
+
+# Git Local Ignore Helpers
+gitlocal() {
+    if [ -z "$1" ]; then
+        echo "📁 Local excludes (.git/info/exclude):"
+        if [ -f .git/info/exclude ]; then
+            cat .git/info/exclude | grep -v '^#' | grep -v '^$' | sed 's/^/  /'
+        else
+            echo "  (empty or not a git repo)"
+        fi
+    else
+        if [ ! -d .git ]; then
+            echo "❌ Not a git repository"
+            return 1
+        fi
+        echo "$1" >> .git/info/exclude
+        echo "✅ Added '$1' to local excludes"
+    fi
+}
+
+gitlocal-edit() {
+    if [ ! -d .git ]; then
+        echo "❌ Not a git repository"
+        return 1
+    fi
+    ${EDITOR:-vim} .git/info/exclude
+}
+
+gitlocal-init() {
+    if [ ! -d .git ]; then
+        echo "❌ Not a git repository"
+        return 1
+    fi
+    
+    if [ -f ".gitignore.local.template" ]; then
+        cat .gitignore.local.template >> .git/info/exclude
+        echo "✅ Initialized from .gitignore.local.template"
+    else
+        echo "❌ No .gitignore.local.template found"
+    fi
+}
+
+gitlocal-clear() {
+    if [ ! -d .git ]; then
+        echo "❌ Not a git repository"
+        return 1
+    fi
+    
+    echo "# Local exclude patterns" > .git/info/exclude
+    echo "✅ Cleared local excludes"
+}
+
+alias git-sage='docker run --rm -it \
+  -v $(pwd):/workspace/project \
+  -v ~/.gitconfig:/root/.gitconfig:ro \
+  -v ~/.ssh:/root/.ssh:ro \
+  --network host \
+  -w /workspace/project \
+  git-sage:latest /workspace/git-sage'
 # Clear terminal on startup
 clear
+
+. "/Users/mac/.deno/env"
+# Added by Windsurf
+export PATH="/Users/mac/.codeium/windsurf/bin:$PATH"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

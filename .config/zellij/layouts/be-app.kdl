@@ -1,0 +1,16 @@
+layout {
+    pane split_direction="vertical" {
+        pane name="LUMIN WEB BACKEND 2.0 🦀" {
+            command "zsh"
+            args "-c" "cd ./lumin-web-backend-2.0 && just dev; exec zsh"
+        }
+        pane name="LUMIN AUTH 🦆" {
+            command "zsh" 
+            args "-c" "cd ./lumin-auth && just dev; exec zsh"
+        }
+        pane name="LUMIN WEB VIEWER 2.0 🐢" {
+            command "zsh"
+            args "-c" "cd ./lumin-web-viewer-2.0 && just dev; exec zsh"
+        }
+    }
+}
