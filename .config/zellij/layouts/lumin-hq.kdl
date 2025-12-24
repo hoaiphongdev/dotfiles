@@ -6,7 +6,7 @@ layout {
     }
   }
 
-  tab name="LUMIN HQ 🌼" cwd="~/Documents/workspaces/dsv/projects" {
+  tab name="LUMIN HQ 🌼" cwd="~/Documents/workspaces/lumin" {
     pane split_direction="vertical" {
       pane focus=true
       pane

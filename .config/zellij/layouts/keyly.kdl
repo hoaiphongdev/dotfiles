@@ -1,0 +1,21 @@
+layout {
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+
+  tab name="KEYLY ⛱️" {
+    pane split_direction="vertical" {
+      pane split_direction="horizontal" {
+        pane focus=true name="Keyly App 🐤" size="65%" cwd="~/Documents/workspaces/personal/keyly"
+        pane name="Keyly App 🤖" size="35%" cwd="~/Documents/workspaces/personal/keyly"
+      }
+      pane split_direction="horizontal" {
+        pane name="Keyly Docs 📖" size="65%" cwd="~/Documents/workspaces/personal/keyly-docs"
+        pane name="Keyly Docs 🤖" size="35%" cwd="~/Documents/workspaces/personal/keyly-docs"
+      }
+    }
+  }
+}

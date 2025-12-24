@@ -6,24 +6,16 @@ layout {
     }
   }
 
-  tab name="LUMIN STATIC 🌮" cwd="~/Documents/workspaces/dsv/projects/lumin-static" {
-    pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
-    }
-  }
-
-  tab name="LUMIN TEMPLATES 🍞" cwd="~/Documents/workspaces/dsv/projects/lumin-templates" {
-    pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
-    }
-  }
-
-  tab name="LUMIN STATIC | MIGRATION 🍊" cwd="~/Documents/workspaces/dsv/projects/apply-nextjs-static-master" {
+  tab name="LUMIN WEBOPT ⚡️" {
+    pane split_direction="vertical" {
       pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
+        pane focus=true name="Lumin static ⭐️" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-static"
+        pane name="Lumin static 🤖" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-static"
+      }
+      pane split_direction="horizontal" {
+        pane name="Lumin templates 🚀" size="65%" cwd="~/Documents/workspaces/lumin/github/lumin-templates"
+        pane name="Lumin templates 🤖" size="35%" cwd="~/Documents/workspaces/lumin/github/lumin-templates"
+      }
     }
   }
 }

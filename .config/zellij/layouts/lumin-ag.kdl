@@ -6,21 +6,28 @@ layout {
     }
   }
 
-  tab name="LUMIN STRAPI 🎨" cwd="~/Documents/workspaces/lumin/github/templates-strapi" {
+  tab name="LUMIN AG WEB 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-web" {
     pane split_direction="horizontal" {
       pane focus=true name="BOSS ⭐️" size="70%"
       pane name="MINION 🤖" size="30%"
     }
   }
 
-  tab name="LUMIN SCRIPTS CMS 🐸" cwd="~/Documents/workspaces/lumin/github/lumin-scripts-cms" {
+  tab name="LUMIN AG BE 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-backend" {
     pane split_direction="horizontal" {
       pane focus=true name="BOSS ⭐️" size="70%"
       pane name="MINION 🤖" size="30%"
     }
   }
 
-  tab name="MEILISEARCH LOCAL ⚡️" cwd="~/Documents/workspaces/lumin/misc/meilisearch-local" {
+  tab name="LUMIN AG WORKER 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-worker" {
+    pane split_direction="horizontal" {
+      pane focus=true name="BOSS ⭐️" size="70%"
+      pane name="MINION 🤖" size="30%"
+    }
+  }
+
+  tab name="LUMIN AG LLM 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-llm" {
     pane split_direction="horizontal" {
       pane focus=true name="BOSS ⭐️" size="70%"
       pane name="MINION 🤖" size="30%"

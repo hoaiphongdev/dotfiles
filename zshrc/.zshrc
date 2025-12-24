@@ -1,5 +1,7 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # Environment Variables
 export TERM=xterm-256color
 export CLICOLOR=1
@@ -34,6 +36,7 @@ autoload -Uz compinit && compinit -i
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
+eval $(thefuck --alias)
 
 # SSH Agent
 if [[ -d "$HOME/.ssh" ]]; then
@@ -130,5 +133,8 @@ clear
 # Added by Windsurf
 export PATH="/Users/mac/.codeium/windsurf/bin:$PATH"
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+export DOCKER_HOST='unix:///var/folders/pv/bm2crw6j3tn7wrv_37n8f7cm0000gn/T/podman/podman-machine-default-api.sock'
+
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)

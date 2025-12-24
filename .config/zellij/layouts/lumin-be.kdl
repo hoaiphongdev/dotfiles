@@ -6,14 +6,14 @@ layout {
     }
   }
 
-  tab name="LUMIN WEB BACKEND 2.0 🥕" cwd="~/Documents/workspaces/dsv/projects/lumin-web-backend-2.0" {
+  tab name="LUMIN WEB BACKEND 2.0 🥕" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-web-backend-2.0" {
     pane split_direction="horizontal" {
       pane focus=true name="BOSS ⭐️" size="70%"
       pane name="MINION 🤖" size="30%"
     }
   }
 
-  tab name="LUMIN AUTH ✍🏻" cwd="~/Documents/workspaces/dsv/projects/lumin-auth" {
+  tab name="LUMIN AUTH ✍🏻" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-auth" {
     pane split_direction="horizontal" {
       pane focus=true name="BOSS ⭐️" size="70%"
       pane name="MINION 🤖" size="30%"
