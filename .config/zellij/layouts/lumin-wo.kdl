@@ -9,12 +9,12 @@ layout {
   tab name="LUMIN WEBOPT ⚡️" {
     pane split_direction="vertical" {
       pane split_direction="horizontal" {
-        pane focus=true name="Lumin static ⭐️" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-static"
-        pane name="Lumin static 🤖" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-static"
+        pane focus=true name="LUMIN STATIC ⚙️" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-static"
+        pane name="LUMIN STATIC 🔗" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-static"
       }
       pane split_direction="horizontal" {
-        pane name="Lumin templates 🚀" size="65%" cwd="~/Documents/workspaces/lumin/github/lumin-templates"
-        pane name="Lumin templates 🤖" size="35%" cwd="~/Documents/workspaces/lumin/github/lumin-templates"
+        pane name="LUMIN TEMPLATES 🎨" size="65%" cwd="~/Documents/workspaces/lumin/github/lumin-templates"
+        pane name="LUMIN TEMPLATES 🖌️" size="35%" cwd="~/Documents/workspaces/lumin/github/lumin-templates"
       }
     }
   }

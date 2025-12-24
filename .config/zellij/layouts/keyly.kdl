@@ -9,12 +9,12 @@ layout {
   tab name="KEYLY ⛱️" {
     pane split_direction="vertical" {
       pane split_direction="horizontal" {
-        pane focus=true name="Keyly App 🐤" size="65%" cwd="~/Documents/workspaces/personal/keyly"
-        pane name="Keyly App 🤖" size="35%" cwd="~/Documents/workspaces/personal/keyly"
+        pane focus=true name="KEYLY APP 🐤" size="65%" cwd="~/Documents/workspaces/personal/keyly"
+        pane name="KEYLY APP 🐥" size="35%" cwd="~/Documents/workspaces/personal/keyly"
       }
       pane split_direction="horizontal" {
-        pane name="Keyly Docs 📖" size="65%" cwd="~/Documents/workspaces/personal/keyly-docs"
-        pane name="Keyly Docs 🤖" size="35%" cwd="~/Documents/workspaces/personal/keyly-docs"
+        pane name="KEYLY DOCS 📖" size="65%" cwd="~/Documents/workspaces/personal/keyly-docs"
+        pane name="KEYLY DOCS 📝" size="35%" cwd="~/Documents/workspaces/personal/keyly-docs"
       }
     }
   }

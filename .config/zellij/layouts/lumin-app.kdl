@@ -6,10 +6,10 @@ layout {
     }
   }
 
-  tab name="LUMIN WEB VIEWER 2.0 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-web-viewer-2.0" {
+  tab name="LUMIN WEB VIEWER 2.0 🔮" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-web-viewer-2.0" {
     pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
+      pane focus=true name="BOSS 👑" size="70%"
+      pane name="MINION 🎩" size="30%"
     }
   }
 }

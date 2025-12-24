@@ -9,12 +9,12 @@ layout {
   tab name="LUMIN INNOVATE 🌼" {
     pane split_direction="vertical" {
       pane split_direction="horizontal" {
-        pane focus=true name="WEBOPT MF ⭐️" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-webopt-mf"
-        pane name="WEBOPT MF 🤖" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-webopt-mf"
+        pane focus=true name="WEBOPT MF 🚀" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-webopt-mf"
+        pane name="WEBOPT MF 🛸" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-webopt-mf"
       }
       pane split_direction="horizontal" {
-        pane name="AI INNOVATE 🚀" size="65%" cwd="~/Documents/workspaces/lumin/github/lumin-wo-ai-innovate"
-        pane name="AI INNOVATE 🤖" size="35%" cwd="~/Documents/workspaces/lumin/github/lumin-wo-ai-innovate"
+        pane name="AI INNOVATE 🌈" size="65%" cwd="~/Documents/workspaces/lumin/github/lumin-wo-ai-innovate"
+        pane name="AI INNOVATE 🎭" size="35%" cwd="~/Documents/workspaces/lumin/github/lumin-wo-ai-innovate"
       }
     }
   }

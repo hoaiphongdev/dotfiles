@@ -6,31 +6,24 @@ layout {
     }
   }
 
-  tab name="LUMIN AG WEB 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-web" {
-    pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
-    }
-  }
-
-  tab name="LUMIN AG BE 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-backend" {
-    pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
-    }
-  }
-
-  tab name="LUMIN AG WORKER 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-worker" {
-    pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
-    }
-  }
-
-  tab name="LUMIN AG LLM 🌼" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-llm" {
-    pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
+  tab name="LUMIN AG 🌸" {
+    pane split_direction="vertical" {
+      pane split_direction="horizontal" {
+        pane focus=true name="LUMIN AG WEB ⭐️" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-web"
+        pane name="LUMIN AG WEB 🤖" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-web"
+      }
+      pane split_direction="horizontal" {
+        pane focus=true name="LUMIN AG BE 🔥" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-backend"
+        pane name="LUMIN AG BE 🎯" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-backend"
+      }
+      pane split_direction="horizontal" {
+        pane focus=true name="LUMIN AG WORKER 💎" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-worker"
+        pane name="LUMIN AG WORKER 🎪" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-worker"
+      }
+      pane split_direction="horizontal" {
+        pane focus=true name="LUMIN AG LLM 🧠" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-llm"
+        pane name="LUMIN AG LLM 🔧" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-agreement-gen-llm"
+      }
     }
   }
 }

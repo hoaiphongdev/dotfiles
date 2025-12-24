@@ -8,8 +8,8 @@ layout {
 
   tab name="LUMIN E2E 🧪" cwd="~/Documents/workspaces/dsv/lumin/lumin-e2e" {
     pane split_direction="horizontal" {
-      pane focus=true name="BOSS ⭐️" size="70%"
-      pane name="MINION 🤖" size="30%"
+      pane focus=true name="BOSS 💫" size="70%"
+      pane name="MINION 🎱" size="30%"
     }
   }
 }
