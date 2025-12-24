@@ -1,0 +1,6 @@
+# Raycast
+.config/raycast/
+
+# Dependencies
+node_modules/
+
