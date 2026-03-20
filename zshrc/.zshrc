@@ -26,9 +26,9 @@ if [[ "$(uname -s)" = "Darwin" ]]; then
 fi
 
 # ZSH Core Configuration
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-plugins=(git docker)
-ZSH_THEME=""
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# plugins=(git docker)
+# ZSH_THEME=""
 # source "$ZSH/oh-my-zsh.sh"
 
 # Shell Completions
@@ -65,9 +65,12 @@ alias llt='ls --tree'
 alias reset-cursor='tput cnorm'
 alias reload-zsh='exec zsh -l'
 
+alias cd='z'
+alias gpr='git pull --rebase'
+alias gpf='git push --force-with-lease'
+
 # Zellij
 alias zj='zellij'
-alias zj-lumin-dev='zellij -l lumin-dev'
 
 # Git Local Ignore Helpers
 gitlocal() {
