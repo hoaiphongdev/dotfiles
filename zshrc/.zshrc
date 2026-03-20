@@ -68,6 +68,7 @@ alias reload-zsh='exec zsh -l'
 alias cd='z'
 alias gpr='git pull --rebase'
 alias gpf='git push --force-with-lease'
+alias gco='git checkout'
 
 # Zellij
 alias zj='zellij'
