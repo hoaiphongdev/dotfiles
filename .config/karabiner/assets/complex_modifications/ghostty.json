@@ -1,62 +1,206 @@
 {
-  "title": "Ghostty Cmd+Number → Ctrl+Number",
+  "title": "Ghostty: ⌘ + 1..9 → ⌃ + 1..9",
   "rules": [
     {
-      "description": "Remap Cmd+Number to Ctrl+Number only in Ghostty",
+      "description": "Ghostty: Change cmd + number (1-9) to ctrl + number (only in Ghostty)",
       "manipulators": [
         {
           "type": "basic",
-          "from": { "key_code": "1", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "1", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "1",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "2", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "2", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "2",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "3", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "3", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "3",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "4", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "4", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "4",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "5", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "5", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "5",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "6", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "6", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "6",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "7", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "7", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "7",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "7",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "8", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "8", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "8",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "8",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         },
         {
           "type": "basic",
-          "from": { "key_code": "9", "modifiers": { "mandatory": ["gui"] } },
-          "to": [ { "key_code": "9", "modifiers": ["control"] } ],
-          "conditions": [ { "type": "frontmost_application_if", "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"] } ]
+          "from": {
+            "key_code": "9",
+            "modifiers": {
+              "mandatory": ["left_command", "right_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": ["left_control", "right_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+            }
+          ]
         }
       ]
     }

@@ -2,6 +2,8 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
+
+
 # Environment Variables
 export TERM=xterm-256color
 export CLICOLOR=1
@@ -27,7 +29,7 @@ fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 plugins=(git docker)
 ZSH_THEME=""
-source "$ZSH/oh-my-zsh.sh"
+# source "$ZSH/oh-my-zsh.sh"
 
 # Shell Completions
 autoload -Uz compinit && compinit -i
@@ -36,7 +38,6 @@ autoload -Uz compinit && compinit -i
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
-eval $(thefuck --alias)
 
 # SSH Agent
 if [[ -d "$HOME/.ssh" ]]; then
@@ -119,22 +120,13 @@ gitlocal-clear() {
     echo "✅ Cleared local excludes"
 }
 
-alias git-sage='docker run --rm -it \
-  -v $(pwd):/workspace/project \
-  -v ~/.gitconfig:/root/.gitconfig:ro \
-  -v ~/.ssh:/root/.ssh:ro \
-  --network host \
-  -w /workspace/project \
-  git-sage:latest /workspace/git-sage'
-# Clear terminal on startup
-clear
+# clear
 
-. "/Users/mac/.deno/env"
-# Added by Windsurf
-export PATH="/Users/mac/.codeium/windsurf/bin:$PATH"
-
-export DOCKER_HOST='unix:///var/folders/pv/bm2crw6j3tn7wrv_37n8f7cm0000gn/T/podman/podman-machine-default-api.sock'
-
-export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
+export PATH="$HOME/.local/bin:$PATH"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+clear

@@ -297,4 +297,4 @@ auto_layout true
 session_serialization true
 styled_underlines true
 support_kitty_keyboard_protocol true
-show_startup_tips true
+show_startup_tips false
