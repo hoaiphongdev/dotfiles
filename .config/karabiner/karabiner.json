@@ -225,27 +225,6 @@
                         ]
                     },
                     {
-                        "description": "New Rule (change left_shift+caps_lock to page_down, right_shift+caps_lock to left_command+mission_control)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.mitchellh\\.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [{ "key_code": "b" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Ghostty: Change cmd + number (1-9) to ctrl + number (only in Ghostty)",
                         "manipulators": [
                             {
