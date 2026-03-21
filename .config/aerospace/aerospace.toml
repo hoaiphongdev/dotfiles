@@ -27,6 +27,16 @@ outer.bottom     = 0
 4 = 'main'
 5 = 'main'
 
+[[on-window-detected]]
+if.workspace = '1'
+check-further-callbacks = true
+run = 'layout h_accordion'
+
+[[on-window-detected]]
+if.workspace = '2'
+check-further-callbacks = true
+run = 'layout h_accordion'
+
 # ── App rules → workspace ─────────────────────────────────────────
 [[on-window-detected]]
 if.app-name-regex-substring = 'Google Chrome|Firefox Developer Edition|Brave Browser'
@@ -42,8 +52,9 @@ run = 'move-node-to-workspace 3'
 
 # Float apps that don't need tiling
 [[on-window-detected]]
-if.app-name-regex-substring = 'System Settings|Calculator|Karabiner-Elements|Finder'
+if.app-name-regex-substring = 'System Settings|Calculator|Karabiner-Elements|Finder|Time Tracking|Sign In'
 run = 'layout floating'
+
 
 # ── Keybindings ───────────────────────────────────────────────────
 [mode.main.binding]
