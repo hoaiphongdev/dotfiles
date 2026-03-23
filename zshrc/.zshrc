@@ -2,6 +2,8 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
+
+
 export LESS='-R'
 export GIT_PAGER='less -+F -R'
 
@@ -28,7 +30,7 @@ fi
 
 # ZSH Core Configuration
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-# plugins=(git docker)
+plugins=(git docker)
 # ZSH_THEME=""
 # source "$ZSH/oh-my-zsh.sh"
 
@@ -131,8 +133,10 @@ zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 export PATH="$HOME/.local/bin:$PATH"
 
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
 clear
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
