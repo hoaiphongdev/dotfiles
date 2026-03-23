@@ -8,13 +8,13 @@ layout {
 
   tab name="[LUMIN] INNOVATE ✨" {
     pane split_direction="vertical" {
-      pane name="Git" size="22%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
-      pane name="Main command" focus=true size="38%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+      pane name="Git" size="30%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search/lumin-web-viewer-2.0"
+      pane name="Main command" focus=true size="30%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search/lumin-webopt-mf"
       pane split_direction="horizontal" size="40%" {
-        pane name="Aux 1" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
-        pane name="Aux 2" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
-        pane name="Aux 3" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
-        pane name="Aux 4" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+        pane name="Aux 1" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search/lumin-wo-ai-innovate"
+        pane name="Aux 2" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search/lumin-web-backend-2.0"
+        pane name="Aux 3" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search/lumin-auth"
+        pane name="Aux 4" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search/lumin-templates"
       }
     }
   }

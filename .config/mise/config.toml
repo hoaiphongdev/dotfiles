@@ -2,5 +2,8 @@
 idiomatic_version_file_enable_tools = []
 experimental = true
 
+[settings.python]
+compile = true
+
 [tools]
 go = "latest"
