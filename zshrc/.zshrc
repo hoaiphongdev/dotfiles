@@ -135,3 +135,4 @@ export PATH="$HOME/.local/bin:$PATH"
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
 clear
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

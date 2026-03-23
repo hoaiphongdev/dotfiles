@@ -1,0 +1,21 @@
+layout {
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+
+  tab name="[LUMIN] PLATFORM ✨" {
+    pane split_direction="vertical" {
+      pane name="Git" size="22%" cwd="~/Documents/workspaces/lumin/platform"
+      pane name="Main command" focus=true size="38%" cwd="~/Documents/workspaces/lumin/platform"
+      pane split_direction="horizontal" size="40%" {
+        pane name="Aux 1" size="25%" cwd="~/Documents/workspaces/lumin/platform"
+        pane name="Aux 2" size="25%" cwd="~/Documents/workspaces/lumin/platform"
+        pane name="Aux 3" size="25%" cwd="~/Documents/workspaces/lumin/platform"
+        pane name="Aux 4" size="25%" cwd="~/Documents/workspaces/lumin/platform"
+      }
+    }
+  }
+}

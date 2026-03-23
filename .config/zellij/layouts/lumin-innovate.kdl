@@ -6,15 +6,15 @@ layout {
     }
   }
 
-  tab name="LUMIN INNOVATE 🌼" {
+  tab name="[LUMIN] INNOVATE ✨" {
     pane split_direction="vertical" {
-      pane split_direction="horizontal" {
-        pane focus=true name="WEBOPT MF 🚀" size="65%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-webopt-mf"
-        pane name="WEBOPT MF 🛸" size="35%" cwd="~/Documents/workspaces/lumin/bitbucket/lumin-webopt-mf"
-      }
-      pane split_direction="horizontal" {
-        pane name="AI INNOVATE 🌈" size="65%" cwd="~/Documents/workspaces/lumin/github/lumin-wo-ai-innovate"
-        pane name="AI INNOVATE 🎭" size="35%" cwd="~/Documents/workspaces/lumin/github/lumin-wo-ai-innovate"
+      pane name="Git" size="22%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+      pane name="Main command" focus=true size="38%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+      pane split_direction="horizontal" size="40%" {
+        pane name="Aux 1" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+        pane name="Aux 2" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+        pane name="Aux 3" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
+        pane name="Aux 4" size="25%" cwd="~/Documents/workspaces/lumin/innovation/ai-power-search"
       }
     }
   }
