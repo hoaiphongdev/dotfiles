@@ -7,3 +7,4 @@ compile = true
 
 [tools]
 go = "latest"
+node = "22.15.0"

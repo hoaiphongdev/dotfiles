@@ -40,14 +40,11 @@ matches:
   - trigger: "@@daily-report"
     force_mode: clipboard
     replace: |
-      *✅ Yesterday / Last week:*
-      - ...
+      ✅ Yesterday / Last week:
 
-      *🎯 Today / In progress:*
-      - ...
+      🎯 Today / In progress:
 
-      *🚧 Blockers:*
-      - ...
+      🚧 Blockers:
 
   - trigger: "@@pr-review"
     force_mode: clipboard
