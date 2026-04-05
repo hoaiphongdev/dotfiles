@@ -1,0 +1,19 @@
+[pull]
+	rebase = true
+	recurseSubmodules = true
+
+[includeIf "gitdir/i:~/Documents/workspaces/lumin/"]
+	path = profile-lumin.inc
+[includeIf "gitdir/i:~/Documents/workspaces/personal/"]
+	path = profile-dev.inc
+[includeIf "gitdir/i:~/Documents/workspaces/study/"]
+	path = profile-dev.inc
+
+[alias]
+	push = push --force-with-lease
+	rename-branch = "!f() { o=\"$1\"; n=\"$2\"; if [ -z \"$o\" ] || [ -z \"$n\" ]; then echo \"usage: git rename-branch <old> <new>\" >&2; exit 1; fi; git branch -m \"$o\" \"$n\" || exit $?; git remote get-url origin >/dev/null 2>&1 || exit 0; git rev-parse --verify \"refs/remotes/origin/$o\" >/dev/null 2>&1 || exit 0; git push -u origin \"$n\" && git push origin --delete \"$o\"; }; f"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

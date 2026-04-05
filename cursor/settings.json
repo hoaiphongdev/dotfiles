@@ -118,4 +118,6 @@
         "sound": "off",
         "announcement": "auto"
     },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
 }
