@@ -75,6 +75,7 @@ declare -a APPS=(
   "kitty"
   "neofetch"
   "zellij"
+  "zed"
   "mise"
   "zshrc"
 )
@@ -148,6 +149,11 @@ for app in "${APPS[@]}"; do
       fi
       source_path="$DOTFILES_DIR/.config/zellij"
       target_path="$HOME/.config/zellij"
+      create_symlink "$app" "$source_path" "$target_path"
+      ;;
+    zed)
+      source_path="$DOTFILES_DIR/.config/zed"
+      target_path="$HOME/.config/zed"
       create_symlink "$app" "$source_path" "$target_path"
       ;;
     mise)

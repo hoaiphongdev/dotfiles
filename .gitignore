@@ -1,6 +1,9 @@
 # Raycast
 .config/raycast/
 
+# Zed — local prompts library (LMDB), not portable
+.config/zed/prompts/
+
 # Dependencies
 node_modules/
 
