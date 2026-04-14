@@ -7,15 +7,75 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": false,
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false,
+  },
+  "edit_predictions": {
+    "ollama": {
+      "max_output_tokens": 64,
+      "prompt_format": "qwen",
+      "model": "codellama:70b",
+      "api_url": "http://localhost:11434",
+    },
+    "provider": "ollama",
+    "open_ai_compatible_api": {
+      "api_url": "https://openrouter.ai/api/v1/completions",
+      "model": "meta-llama/codellama-70b-instruct",
+      "prompt_format": "infer",
+      "max_output_tokens": 128,
+    },
+  },
+  "ui_font_family": "JetBrains Mono",
+  "buffer_font_family": "JetBrains Mono",
+  "agent_servers": {
+    "cursor": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "context_servers": {
+    "mcp-server-figma": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "figma_api_key": "YOUR_FIGMA_ACCESS_TOKEN",
+      },
+    },
+  },
+  "icon_theme": "Catppuccin Mocha",
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
-  "base_keymap": "VSCode",
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "base_keymap": "Cursor",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "Catppuccin Mocha",
   },
+  "restore_on_startup": "launchpad",
 }
