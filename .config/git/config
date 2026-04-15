@@ -2,11 +2,13 @@
 	rebase = true
 	recurseSubmodules = true
 
-[includeIf "gitdir/i:~/Documents/workspaces/lumin/"]
+[includeIf "gitdir/i:/Users/hoaiphong/Documents/workspaces/lumin/"]
 	path = profile-lumin.inc
-[includeIf "gitdir/i:~/Documents/workspaces/personal/"]
+
+[includeIf "gitdir/i:/Users/hoaiphong/Documents/workspaces/personal/"]
 	path = profile-dev.inc
-[includeIf "gitdir/i:~/Documents/workspaces/study/"]
+
+[includeIf "gitdir/i:/Users/hoaiphong/Documents/workspaces/study/"]
 	path = profile-dev.inc
 
 [alias]
