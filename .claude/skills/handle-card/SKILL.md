@@ -1,9 +1,9 @@
 ---
-name: lpw
-description: "End-to-end Linear card workflow for local PDF development. Use when: (1) user provides a Linear card URL or card ID (e.g. LPW-123), (2) user runs /lpw, (3) user says 'start working on this card', 'pick up this Linear ticket', 'implement this Linear task', or pastes a linear.app link."
+name: handle-card
+description: "End-to-end Linear card workflow for local PDF development. Use when: (1) user provides a Linear card URL or card ID (e.g. LPW-123), (2) user runs /handle-card, (3) user says 'start working on this card', 'pick up this Linear ticket', 'implement this Linear task', or pastes a linear.app link."
 ---
 
-# Skill: linear-git-workflow-local
+# Skill: handle-card
 
 End-to-end workflow for handling a Linear card locally — from branch creation to Draft PR. Targets `develop-pdf` as base and destination.
 
@@ -13,7 +13,7 @@ End-to-end workflow for handling a Linear card locally — from branch creation 
 
 | Trigger | Action |
 |---------|--------|
-| `/lpw <card-id or URL>` | Run full workflow for the given card |
+| `/handle-card <card-id or URL>` | Run full workflow for the given card |
 | Paste a `linear.app/...` URL | Auto-triggers this skill |
 | "start working on LPW-123" | Auto-triggers this skill |
 
@@ -168,7 +168,7 @@ When triggered: map files, trace routes, identify entry points and data flow bef
 ## Quick Reference
 
 ```
-/lpw LPW-123
+/handle-card LPW-123
          │
          ▼
 [1] Simple? ──No──► Reject politely
