@@ -8,13 +8,18 @@ layout {
 
   tab name="[LUMIN] PLATFORM ✨" {
     pane split_direction="vertical" {
-      pane name="Git" size="22%" cwd="~/Documents/workspaces/lumin/platform"
-      pane name="Main command" focus=true size="38%" cwd="~/Documents/workspaces/lumin/platform"
       pane split_direction="horizontal" size="40%" {
-        pane name="Aux 1" size="25%" cwd="~/Documents/workspaces/lumin/platform"
-        pane name="Aux 2" size="25%" cwd="~/Documents/workspaces/lumin/platform"
-        pane name="Aux 3" size="25%" cwd="~/Documents/workspaces/lumin/platform"
-        pane name="Aux 4" size="25%" cwd="~/Documents/workspaces/lumin/platform"
+        pane split_direction="vertical" size="50%" {
+          pane name="Aux 1" size="33%" cwd="~/Documents/workspaces/lumin/lumin-platform"
+          pane name="Aux 2" size="34%" cwd="~/Documents/workspaces/lumin/lumin-platform"
+          pane name="Aux 3" size="33%" cwd="~/Documents/workspaces/lumin/lumin-platform"
+        }
+
+        pane split_direction="vertical" size="50%" {
+          pane name="Aux 4" size="33%" cwd="~/Documents/workspaces/lumin/lumin-platform"
+          pane name="Aux 5" size="34%" cwd="~/Documents/workspaces/lumin/lumin-platform"
+          pane name="Aux 6" size="33%" cwd="~/Documents/workspaces/lumin/lumin-platform"
+        }
       }
     }
   }

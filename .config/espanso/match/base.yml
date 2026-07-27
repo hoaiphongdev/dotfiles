@@ -108,4 +108,37 @@ matches:
     force_mode: clipboard
     replace: lumin-editor-backend
 
+  - trigger: "@lsbe"
+    force_mode: clipboard
+    replace: lumin-contract-backend
+
+  - trigger: "@lsw"
+    force_mode: clipboard
+    replace: lumin-sign-worker
+
+  - trigger: "@lsm"
+    force_mode: clipboard
+    replace: lumin-sign-mobile
+
+  - trigger: "@lsmf"
+    force_mode: clipboard
+    replace: lumin-sign-mf
+
+  - trigger: "@lagbe"
+    force_mode: clipboard
+    replace: lumin-agreement-gen-backend
+
+  - trigger: "@lagw"
+    force_mode: clipboard
+    replace: lumin-agreement-gen-worker
+
+  - trigger: "@lagmf"
+    force_mode: clipboard
+    replace: lumin-agreement-gen-mf
+
+  - trigger: "@lagllm"
+    force_mode: clipboard
+    replace: lumin-agreement-gen-llm
+
+
   # And much more! For more information, visit the docs: https://espanso.org/docs/

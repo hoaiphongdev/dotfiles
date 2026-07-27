@@ -68,8 +68,8 @@ resolve_aerospace_target() {
 }
 
 declare -a APPS=(
-  "aerospace"
-  "cursor"
+  # "aerospace"
+  # "cursor"
   "espanso"
   "git"
   "kitty"

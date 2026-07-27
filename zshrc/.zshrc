@@ -1,8 +1,5 @@
-
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-
-
 
 export LESS='-R'
 export GIT_PAGER='less -+F -R'
@@ -31,8 +28,8 @@ fi
 # ZSH Core Configuration
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 plugins=(git docker)
-# ZSH_THEME=""
-# source "$ZSH/oh-my-zsh.sh"
+ZSH_THEME=""
+source "$ZSH/oh-my-zsh.sh"
 
 # Shell Completions
 autoload -Uz compinit && compinit -i
@@ -67,11 +64,6 @@ alias lla='ls -la'
 alias llt='ls --tree'
 alias reset-cursor='tput cnorm'
 alias reload-zsh='exec zsh -l'
-
-alias cd='z'
-alias gpr='git pull --rebase'
-alias gpf='git push --force-with-lease'
-alias gco='git checkout'
 
 # Zellij
 alias zj='zellij'

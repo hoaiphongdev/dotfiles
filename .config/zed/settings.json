@@ -65,11 +65,11 @@
       },
     },
   },
-  "icon_theme": "Catppuccin Mocha",
+  "icon_theme": "Material Icon Theme",
   "session": {
     "trust_all_worktrees": true,
   },
-  "base_keymap": "Cursor",
+  "base_keymap": "VSCode",
   "ui_font_size": 14.0,
   "buffer_font_size": 14.0,
   "theme": {
