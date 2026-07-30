@@ -27,9 +27,18 @@ fi
 
 # ZSH Core Configuration
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
+# Startup warnings are buffered, not printed inline: the `clear` further down would
+# wipe them before they are ever seen. Flushed after that clear instead.
+typeset -ga ZSHRC_WARNINGS=()
+
 plugins=(git docker)
 ZSH_THEME=""
-source "$ZSH/oh-my-zsh.sh"
+if [[ -f "$ZSH/oh-my-zsh.sh" ]]; then
+  source "$ZSH/oh-my-zsh.sh"
+else
+  ZSHRC_WARNINGS+=("oh-my-zsh not found at $ZSH — aliases from the git/docker plugins (gco, gpr, gst, ...) are unavailable. Fix: run \`just sync\` in the dotfiles repo.")
+fi
 
 # Shell Completions
 autoload -Uz compinit && compinit -i
@@ -128,6 +137,14 @@ export PATH="$HOME/.local/bin:$PATH"
 
 clear
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+# Flush buffered startup warnings (see ZSHRC_WARNINGS near the top).
+if (( ${#ZSHRC_WARNINGS} )); then
+  print -u2
+  for _w in $ZSHRC_WARNINGS; do print -u2 "⚠️  $_w"; done
+  print -u2
+  unset _w
+fi
 
 
 # Kiro CLI post block. Keep at the bottom of this file.

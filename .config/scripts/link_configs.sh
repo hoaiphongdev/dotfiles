@@ -48,6 +48,29 @@ create_symlink() {
   log "OK" "$app: linked $target_path -> $source_path"
 }
 
+# oh-my-zsh is a git clone, not a symlink target: it has no Homebrew formula and its
+# own updater (`omz update`) is a git pull inside the clone. Bootstrap it here so a
+# fresh machine does not end up with a linked .zshrc but no git/docker plugin aliases.
+install_oh_my_zsh() {
+  local target="${ZSH:-$HOME/.oh-my-zsh}"
+
+  if [ -d "$target" ]; then
+    log "SKIP" "oh-my-zsh: already installed -> $target"
+    return 0
+  fi
+
+  if ! is_installed "git"; then
+    log "WARN" "oh-my-zsh: git not installed, cannot bootstrap"
+    return 0
+  fi
+
+  if git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$target" >/dev/null 2>&1; then
+    log "OK" "oh-my-zsh: installed -> $target"
+  else
+    log "WARN" "oh-my-zsh: clone failed -> zsh git/docker aliases will be missing"
+  fi
+}
+
 resolve_aerospace_target() {
   local legacy_target="$HOME/.aerospace.toml"
   local xdg_target="$HOME/.config/aerospace/aerospace.toml"
@@ -77,6 +100,7 @@ declare -a APPS=(
   "zellij"
   "zed"
   "mise"
+  "ohmyzsh"
   "zshrc"
 )
 
@@ -164,6 +188,13 @@ for app in "${APPS[@]}"; do
       source_path="$DOTFILES_DIR/.config/mise"
       target_path="$HOME/.config/mise"
       create_symlink "$app" "$source_path" "$target_path"
+      ;;
+    ohmyzsh)
+      if ! is_installed "zsh"; then
+        log "WARN" "oh-my-zsh: zsh not installed, please install first"
+        continue
+      fi
+      install_oh_my_zsh
       ;;
     zshrc)
       if ! is_installed "zsh"; then
