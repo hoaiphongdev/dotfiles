@@ -46,7 +46,6 @@ autoload -Uz compinit && compinit -i
 # Tool Configurations
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-eval "$(mise activate zsh)"
 
 # SSH Agent
 if [[ -d "$HOME/.ssh" ]]; then
@@ -132,6 +131,13 @@ gitlocal-clear() {
 
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 export PATH="$HOME/.local/bin:$PATH"
+
+# Must run after every PATH prepend above: ~/.local/bin ships a Hermes-bundled
+# node that otherwise shadows the mise-pinned toolchain. Inherited mise paths are
+# stripped first because `mise activate` skips prepending a path it already sees,
+# which would leave it behind ~/.local/bin in a nested shell.
+path=(${path:#*/mise/installs/*})
+eval "$(mise activate zsh)"
 
 
 
