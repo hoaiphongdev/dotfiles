@@ -90,7 +90,11 @@ matches:
 
   - trigger: "@lfe"
     force_mode: clipboard
-    replace: lumin-frontend
+    replace: lumin-pdf-web
+
+  - trigger: "@lpdfweb"
+    force_mode: clipboard
+    replace: lumin-pdf-web
 
   - trigger: "@lbe"
     force_mode: clipboard
