@@ -92,7 +92,7 @@ matches:
     force_mode: clipboard
     replace: lumin-pdf-web
 
-  - trigger: "@lpdfweb"
+  - trigger: "@lpw"
     force_mode: clipboard
     replace: lumin-pdf-web
 
