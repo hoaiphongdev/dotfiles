@@ -102,6 +102,7 @@ declare -a APPS=(
   "mise"
   "ohmyzsh"
   "zshrc"
+  "claude-scripts"
 )
 
 for app in "${APPS[@]}"; do
@@ -203,6 +204,11 @@ for app in "${APPS[@]}"; do
       fi
       source_path="$DOTFILES_DIR/zshrc/.zshrc"
       target_path="$HOME/.zshrc"
+      create_symlink "$app" "$source_path" "$target_path"
+      ;;
+    claude-scripts)
+      source_path="$DOTFILES_DIR/.claude/scripts"
+      target_path="$HOME/.claude/scripts"
       create_symlink "$app" "$source_path" "$target_path"
       ;;
     *)
